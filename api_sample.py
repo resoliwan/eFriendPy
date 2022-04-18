@@ -5,9 +5,10 @@ from eFriendPy.API import *
 # 로그를 slack으로 받고 싶은 경우 필요함
 from SlackLogger import SlackLogger
 
+
 def main():
     # Qt 사용하기 위해서 반드시 필요함
-    app = QApplication(sys.argv)    
+    app = QApplication(sys.argv)
 
     # api 객체 생성
     api = HighLevelAPI()
@@ -24,7 +25,7 @@ def main():
     # 계좌 비밀번호 4자리 세팅
     api.Password = "0000"
 
-    # 사용할 계좌 
+    # 사용할 계좌
     account = Accounts[0]
 
     cash_kr = api.GetCashKR(account)
@@ -41,8 +42,6 @@ def main():
 
     stocks_us = api.GetUSStocks(account)
     print("보유 미국주식: {0}".format(stocks_us))
-    
-
 
 
 if __name__ == "__main__":
